@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn Korean</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div>
+  <div>
+    <nav>
+      <ul>
+        {{#if user}}
+        <li>
+          <a href="/">Dashboard</a>
+        </li>
+        <li>
+          <a href="/users/logout">Logout</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="/users/login">Login</a>
+        </li>
+        <li>
+          <a href="/users/register">Register</a>
+        </li>
+        {{/if}}
+
+
+
+      </ul>
+    </nav>
+    <h3 class="title">Learn Korean</h3>
+  </div>
+
+  <div>
+    <div>
+      {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+      {{/if}}
+
+      {{#if error_msg}}
+      <div class="alert alert-danger">{{error_msg}}</div>
+      {{/if}}
+
+      {{#if error}}
+      <div class="alert alert-danger">{{error}}</div>
+      {{/if}}
+
+
+
+      {{{body}}}
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; LearnKorean 2017</p>
+  </footer>
+
+</div> <!-- /container -->
+  </body>
+</html>
