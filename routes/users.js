@@ -5,6 +5,9 @@ var LocalStrategy = require('passport-local').Strategy;
 
 
 var User = require('../models/user');
+
+var Word = require('../models/word');
+
 // Register
 router.get('/register', function(req, res){
 	res.render('register');
@@ -13,6 +16,11 @@ router.get('/register', function(req, res){
 //log In
 router.get('/login', function(req, res){
 	res.render('login');
+});
+
+//admin
+router.get('/admin', function(req, res){
+	res.render('admin');
 });
 
 // Register
@@ -94,6 +102,43 @@ router.get('/logout', function(req, res){
 	req.logout();
 	req.flash('success_msg', 'You are logged out');
 	res.redirect('/users/login');
+});
+
+// Register
+router.post('/admin', function(req, res){
+	var english = req.body.english;
+	var korean = req.body.korean;
+	var category = req.body.category;
+	var audio = req.body.audio;
+	// validation
+	req.checkBody('english', 'English word is required').notEmpty();
+	req.checkBody('korean', 'korean word is required').notEmpty();
+	req.checkBody('category', 'category is required').notEmpty();
+	req.checkBody('audio', 'Audio file is required').notEmpty();
+
+	var errors = req.validationErrors();
+	if(errors){
+		res.render('admin', {
+			errors:errors
+		});
+	}
+	else{
+		var newWord = new Word({
+					english: english,
+					korean: korean,
+					category: category,
+					audio: audio
+				});
+
+				Word.createWord(newWord, function(err, word){
+					if(err) throw err;
+					console.log(word);
+				});
+
+				req.flash('success_msg', 'Word was succesfully saved');
+
+				res.redirect('/users/admin');
+	}
 });
 
 module.exports = router;
