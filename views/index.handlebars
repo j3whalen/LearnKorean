@@ -1,4 +1,42 @@
 <div class="center">
-  <h2 class="page-header">Dashboard</h2>
-  <p>Welcome to your dashboard</p>
+  <h2 class="page-header">Hello, {{name}}! Welcome To your Dashboard!</h2>
+  <p>Put Statistics here</p>
 </div>
+<form class="" action="index.html" method="post">
+  <h3 class="text-center">Categories</h3>
+  <div class="container-fluid text-center">
+    <div class="row">
+      <fieldset>
+      <div class="col-lg-3">
+        <input type="radio" value="food" name="category">Food
+      </div>
+      <div class="col-lg-3">
+        <input type="radio" value="locations" name="category">Locations
+      </div>
+      <div class="col-lg-3">
+        <input type="radio" value="hangul" name="category">Hangul
+      </div>
+      <div class="col-lg-3">
+        <input type="radio" value="greetings" name="category">Greetings
+      </div>
+      </fieldset>
+    </div>
+  </div>
+  <h3 class="text-center">Ways To Learn</h3>
+  <div class="container-fluid text-center">
+    <div class="row">
+      <fieldset>
+      <div class="col-lg-4">
+        <input type="radio" value="flashcards" name="learnmethod">Flash Cards
+      </div>
+      <div class="col-lg-4">
+        <input type="radio" value="matching" name="learnmethod">Matching
+      </div>
+      <div class="col-lg-4">
+        <input type="radio" value="Listen" name="learnmethod">Listening
+      </div>
+      </fieldset>
+    </div>
+  </div>
+  <input type="submit" value="LEARN!">
+</form>

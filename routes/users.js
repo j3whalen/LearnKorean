@@ -93,10 +93,31 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
+  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}));
+  //function(req, res) {
+    //res.redirect('/', name);
+  //});
+
+	//test below
+/*
+	router.post('/login',
+  passport.authenticate('local'),
   function(req, res) {
-    res.redirect('/');
+		var name = req.user.name;
+		var listOfCorrectWords = req.user.listOfCorrectWords;
+		var listOfIncorrectWords = req.user.listOfIncorrectWords;
+
+		console.log(name);
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+		res.render('index', {
+			name:name,
+			listOfCorrectWords: listOfCorrectWords,
+			listOfIncorrectWords: listOfIncorrectWords
+		});
   });
+	*/
+
 
 router.get('/logout', function(req, res){
 	req.logout();

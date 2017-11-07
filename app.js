@@ -14,7 +14,6 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/koreanwebsite');
 var db = mongoose.connection;
 
-var admin = require('./routes/admin');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -76,7 +75,6 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
-app.use('/admin', admin);
 app.use('/', routes);
 app.use('/users', users);
 
