@@ -1,39 +1,41 @@
-<h2>ADMIN</h2>
-{{#if errors}}
-  {{#each errors}}
-  <div>
-    <div class="alert alert-danger">
-      {{{msg}}}
+<div class="center">
+  <h2>Add A Word</h2>
+  {{#if errors}}
+    {{#each errors}}
+    <div>
+      <div class="alert alert-danger">
+        {{{msg}}}
+      </div>
     </div>
-  </div>
-  {{/each}}
-{{/if}}
-<form action="/users/admin" method="post">
-  <div>
-    <label>English Word</label>
-    <input type="text" name="english" placeholder="English Word">
-  </div>
-  <div>
-    <label>Korean Word</label>
-    <input type="text" name="korean" placeholder="Korean Word">
-  </div>
-  <div>
-    <label>Category</label>
-    <select name = "category">
-      <option value="locations">locations</option>
-      <option value="greetings">greetings</option>
-      <option value="food">food</option>
-      <option value="hangul">hangul</option>
-    </select>
-  </div>
-  <br>
-  <div>
-    <label>Audio File</label>
-    <input name="audio" type="file">
-  </div>
-  <br>
-  <div>
-    <button type="submit">Submit</button>
-  </div>
+    {{/each}}
+  {{/if}}
+  <form action="/users/admin" method="post">
+    <div>
+      <label>English Word</label>
+      <input type="text" name="english" placeholder="English Word">
+    </div>
+    <div>
+      <label>Korean Word</label>
+      <input type="text" name="korean" placeholder="Korean Word">
+    </div>
+    <div>
+      <label>Category</label>
+      <select name = "category">
+        <option value="locations">locations</option>
+        <option value="greetings">greetings</option>
+        <option value="food">food</option>
+        <option value="hangul">hangul</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <label>Audio File</label>
+      <input name="audio" type="file">
+    </div>
+    <br>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
 
-</form>
+  </form>
+</div>
