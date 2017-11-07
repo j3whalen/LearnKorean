@@ -20,18 +20,17 @@
         </li>
         {{else}}
         <li>
-          <a href="/users/login">Login</a>
+          <a href="/users/login">Login{{user}}</a>
         </li>
         <li>
           <a href="/users/register">Register</a>
         </li>
         {{/if}}
+        {{#if isAdmin}}
         <li>
           <a href="/users/admin">Add A Word</a>
         </li>
-
-
-
+        {{/if}}
       </ul>
     </nav>
     <h1 class="title">Learn Korean</h1>

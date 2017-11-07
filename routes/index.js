@@ -4,7 +4,11 @@ var router = express.Router();
 console.log('index.js');
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
-	res.render('index');
+	res.render('index', {
+		isAdmin: function(){
+			return res.locals.user.username == 'admin';
+		}
+	});
 });
 
 function ensureAuthenticated(req, res, next){

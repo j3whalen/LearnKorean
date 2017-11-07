@@ -75,6 +75,12 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
+var hbs = exphbs.create({
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+    eq: function (value) { return value == 'admin'; }
+  }
+});
 app.use('/', routes);
 app.use('/users', users);
 
