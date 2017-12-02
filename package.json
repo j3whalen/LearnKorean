@@ -9,6 +9,7 @@
   "author": "Josh Whalen",
   "license": "ISC",
   "dependencies": {
+    "asyncwait": "^1.0.2",
     "bcryptjs": "*",
     "body-parser": "*",
     "connect-flash": "*",

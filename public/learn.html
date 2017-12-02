@@ -1,0 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h1>Implement angular app</h1>
+    
+    
+  </div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope, $http) {
+    $http.get("http://localhost:3000/learn.angular")//http://localhost:3000/learn.html
+    .then(function(response){
+
+    });
+  });
+  </script>
+</body>

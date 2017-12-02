@@ -127,12 +127,12 @@ router.post('/admin', function(req, res){
 	var english = req.body.english;
 	var korean = req.body.korean;
 	var category = req.body.category;
-	var audio = req.body.audio;
+	var transliteration = req.body.transliteration;
 	// validation
 	req.checkBody('english', 'English word is required').notEmpty();
 	req.checkBody('korean', 'korean word is required').notEmpty();
 	req.checkBody('category', 'category is required').notEmpty();
-	req.checkBody('audio', 'Audio file is required').notEmpty();
+	req.checkBody('transliteration', 'category is required').notEmpty();
 
 	var errors = req.validationErrors();
 	if(errors){
@@ -158,5 +158,6 @@ router.post('/admin', function(req, res){
 				res.redirect('/users/admin');
 	}
 });
+
 
 module.exports = router;
