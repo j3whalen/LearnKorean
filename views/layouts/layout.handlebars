@@ -6,63 +6,60 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
+  <!-- Include Angular library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <!-- Include out Angular scripts here -->
+  <script src="/scripts/root.js"></script>
+  <!-- End -->
   <body>
     <div>
-  <div>
-    <nav>
-      <ul>
-        {{#if user}}
-        <li>
-          <a class="active" href="/">Dashboard</a>
-        </li>
-        <li>
-          <a href="/users/logout">Logout</a>
-        </li>
-        <li>
-          <a href="/test.html">Logout</a>
-        </li>
-        {{else}}
-        <li>
-          <a href="/users/login">Login{{user}}</a>
-        </li>
-        <li>
-          <a href="/users/register">Register</a>
-        </li>
-        {{/if}}
-        {{#if isAdmin}}
-        <li>
-          <a href="/users/admin">Add A Word</a>
-        </li>
-        {{/if}}
-      </ul>
-    </nav>
-    <h1 class="title">Learn Korean</h1>
-  </div>
+      <div>
+        <nav>
+          <ul>
+            {{#if user}}
+            <li>
+              <a class="active" href="/">Dashboard</a>
+            </li>
+            <li>
+              <a href="/users/logout">Logout</a>
+            </li>
+            <li>
+              <a href="/test.html">Logout</a>
+            </li>
+            {{else}}
+            <li>
+              <a href="/users/login">Login{{user}}</a>
+            </li>
+            <li>
+              <a href="/users/register">Register</a>
+            </li>
+            {{/if}}
+            {{#if isAdmin}}
+            <li>
+              <a href="/users/admin">Add A Word</a>
+            </li>
+            {{/if}}
+          </ul>
+        </nav>
+        <h1 class="title">Learn Korean</h1>
+      </div>
 
-  <div>
-    <div>
-      {{#if success_msg}}
-        <div class="alert alert-success">{{success_msg}}</div>
-      {{/if}}
-
-      {{#if error_msg}}
-      <div class="alert alert-danger">{{error_msg}}</div>
-      {{/if}}
-
-      {{#if error}}
-      <div class="alert alert-danger">{{error}}</div>
-      {{/if}}
-
-
-
-      {{{body}}}
+      <div>
+        <div>
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+          {{#if error_msg}}
+          <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+          {{#if error}}
+          <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+          {{{body}}}
+        </div>
+      </div>
+      <footer>
+      </footer>
     </div>
-
-  </div>
-
-  <footer>
-  </footer>
-
-</div> <!-- /container -->
   </body>
 </html>

@@ -25,6 +25,15 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('/users/login');
 	}
 }
+
+router.get('/angular', ensureAuthenticated, function(req, res){
+	res.render('angular', {
+		isAdmin: function(){
+			return res.locals.user.username == 'admin';
+		}
+	});
+});
+
 //Functionality for getting database objects to angular
 router.get('/test.angular', function(req, res) {
 	db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
@@ -42,8 +51,7 @@ router.get('/test.angular', function(req, res) {
 			  });
 		}
 	});
-
-	});	
+});
 
 	//post request to learn korean
 router.post('/learn', function(req, res){
@@ -61,11 +69,8 @@ router.post('/learn', function(req, res){
 		});
 	}
 	else{
-		res.render('learn');
-		
+		res.render('angular');
 	}
-	
-	
 });
 
 module.exports = router;
