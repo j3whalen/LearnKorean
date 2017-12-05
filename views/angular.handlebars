@@ -4,9 +4,14 @@
 -->
 <div ng-app="myApp">
   <div ng-controller="myCtrl">
-    <h1>English word: {{ english}}</h1>
-    <h1>Korean word: {{ korean}}</h1>
-    <h1>Transliteration: {{ transliteration}}</h1>
-    <h1>Category: {{ category}}</h1>
+      {{category}}
+
+<div class="cards" ng-repeat:"x in result">
+  <ul>
+    <li>{{x.english}}</li>
+    <li>{{x.korean}}</li>
+  </ul>
+</div>
+{{x}}
   </div>
 </div>

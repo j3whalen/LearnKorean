@@ -41,14 +41,19 @@ router.get('/test.angular', function(req, res) {
 			throw err;
 		}
 		else{
-			console.log(result);
+			console.log("get methodddd", result);
 			console.log(result.category);
-			res.send({
-				english: result.english,
-				korean: result.korean,
-				transliteration: result.transliteration,
-				category: result.category
-			  });
+			db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
+				if(err){
+					throw err;
+				}
+				else{
+					console.log("get method ", result);
+					res.render('angular', {
+						x: result	
+					});
+				}
+			});
 		}
 	});
 });
@@ -69,7 +74,17 @@ router.post('/learn', function(req, res){
 		});
 	}
 	else{
-		res.render('angular');
+		db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
+			if(err){
+				throw err;
+			}
+			else{
+				console.log("inside post to learn "+result);
+				res.render('angular', {
+					result: JSON.stringify(result)
+				});
+			}
+		});
 	}
 });
 
