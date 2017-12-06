@@ -1,14 +1,38 @@
+/* UD */
+
+video{
+    position:relative;
+    display:block;
+    width:100%; 
+    background-size:cover;
+  }
+  .float-right{
+    position:absolute;
+  }
+  h2{
+    top:80px;
+    right:0;
+  }
+  a{
+    top:150px;
+    right:50px;
+  }
+
+.jumbotron{
+    background-size: cover;
+    padding: 60px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
 }
 .center {
     margin: auto;
     width: 50%;
-    border: 10px solid black;
     padding: 10px;
     border-radius: 8px;
 }
@@ -20,7 +44,13 @@ background: url('/img/orange.jpg') no-repeat center center fixed;
 background-size: cover;
 }
 body{
-  background-color: orange;
+    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
+    background-image:url('../img/artboard.png');
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 li {
@@ -29,7 +59,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
