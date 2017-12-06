@@ -1,10 +1,12 @@
 /* UD */
 
+
 video{
     position:relative;
     display:block;
     width:100%; 
     background-size:cover;
+    border-radius: 10px;
   }
   .float-right{
     position:absolute;
@@ -20,7 +22,15 @@ video{
 
 .jumbotron{
     background-size: cover;
-    padding: 60px;
+    /* padding: 60px; */
+    border-radius: 10px;
+}
+
+.jumbotron.nobackground{
+    background-size: cover;
+    /* padding: 60px; */
+    border-radius: 10px;
+    background-color: none;
 }
 
 ul {
@@ -37,16 +47,16 @@ ul {
     border-radius: 8px;
 }
 backup{
-background: url('/img/orange.jpg') no-repeat center center fixed;
+/* background: url('/img/orange.jpg') no-repeat center center fixed; */
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 }
 body{
-    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
+    background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
     background-image:url('../img/artboard.png');
-    background-attachment:scroll;
+    background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
 
