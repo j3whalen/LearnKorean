@@ -2,16 +2,40 @@
   Angular and associated Controller logic are now included as JS scripts
   at the top of layout.handlebars
 -->
-<div ng-app="myApp">
-  <div ng-controller="myCtrl">
-      {{category}}
 
-<div class="cards" ng-repeat:"x in result">
-  <ul>
-    <li>{{x.english}}</li>
-    <li>{{x.korean}}</li>
-  </ul>
+<h1>{{category}}</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-repeat="card in cards track by $index">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+      <h2 ng-bind="card.english"></h2>
+		</div>
+		<div class="back">
+			<!-- back content -->
+      <h2 ng-bind="card.korean"></h2>
+      <h2 ng-bind="card.transliteration"></h2>
+		</div>
+	</div>
 </div>
-{{x}}
-  </div>
+    <br>
 </div>
+</div>
+
+<script>
+  
+  // Define the Application module
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("http://localhost:3000/test.angular")
+  .then(function(response){
+    $scope.cards = response.data.cards;
+    console.log("Angular Console: ", $scope.cards);
+  }, function(error) {
+    console.log("ERROR", error);
+  });
+});
+
+</script>

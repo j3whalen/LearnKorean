@@ -36,24 +36,13 @@ router.get('/angular', ensureAuthenticated, function(req, res){
 
 //Functionality for getting database objects to angular
 router.get('/test.angular', function(req, res) {
-	db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
+	db.collection("words").find({}).toArray (function(err, result) {
 		if(err){
 			throw err;
 		}
 		else{
-			console.log("get methodddd", result);
-			console.log(result.category);
-			db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
-				if(err){
-					throw err;
-				}
-				else{
-					console.log("get method ", result);
-					res.render('angular', {
-						x: result	
-					});
-				}
-			});
+			res.send({
+				cards:result});
 		}
 	});
 });
@@ -74,18 +63,10 @@ router.post('/learn', function(req, res){
 		});
 	}
 	else{
-		db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
-			if(err){
-				throw err;
-			}
-			else{
-				console.log("inside post to learn "+result);
-				res.render('angular', {
-					result: JSON.stringify(result)
-				});
-			}
+		res.render('angular', {
+			category: category
 		});
-	}
+		}
 });
 
 module.exports = router;
