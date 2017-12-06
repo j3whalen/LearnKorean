@@ -25,25 +25,27 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('/users/login');
 	}
 }
+
+router.get('/angular', ensureAuthenticated, function(req, res){
+	res.render('angular', {
+		isAdmin: function(){
+			return res.locals.user.username == 'admin';
+		}
+	});
+});
+
 //Functionality for getting database objects to angular
 router.get('/test.angular', function(req, res) {
-	db.collection("words").findOne({english:"I am very happy to meet you"}, function(err, result) {
+	db.collection("words").find({}).toArray (function(err, result) {
 		if(err){
 			throw err;
 		}
 		else{
-			console.log(result);
-			console.log(result.category);
 			res.send({
-				english: result.english,
-				korean: result.korean,
-				transliteration: result.transliteration,
-				category: result.category
-			  });
+				cards:result});
 		}
 	});
-
-	});	
+});
 
 	//post request to learn korean
 router.post('/learn', function(req, res){
@@ -61,11 +63,10 @@ router.post('/learn', function(req, res){
 		});
 	}
 	else{
-		res.render('learn');
-		
-	}
-	
-	
+		res.render('angular', {
+			category: category
+		});
+		}
 });
 
 module.exports = router;

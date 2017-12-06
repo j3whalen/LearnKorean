@@ -1,14 +1,38 @@
+/* UD */
+
+video{
+    position:relative;
+    display:block;
+    width:100%; 
+    background-size:cover;
+  }
+  .float-right{
+    position:absolute;
+  }
+  h2{
+    top:80px;
+    right:0;
+  }
+  a{
+    top:150px;
+    right:50px;
+  }
+
+.jumbotron{
+    background-size: cover;
+    padding: 60px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
 }
 .center {
     margin: auto;
     width: 50%;
-    border: 10px solid black;
     padding: 10px;
     border-radius: 8px;
 }
@@ -20,7 +44,13 @@ background: url('/img/orange.jpg') no-repeat center center fixed;
 background-size: cover;
 }
 body{
-  background-color: orange;
+    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
+    background-image:url('../img/artboard.png');
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 li {
@@ -29,7 +59,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -73,4 +103,48 @@ input + input {
 }
 h2{
   text-align: center;
+}
+/*FLIPING A CARD*/
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 700px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+    height: 200px;
+    
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.3s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+    background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
