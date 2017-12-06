@@ -1,7 +1,62 @@
 /* UD */
+
+
+/* http://www.colourlovers.com/palette/4031931/Rose_Quartz_Serenity */
+img{
+
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+.showcase{
+
+    padding:40px;
+
+}
+
+
+.start-now{
+
+    background: linear-gradient(160deg, #D4DFFA 0%, #F7BEBE 100%);
+    padding: 40px;
+}
+
+
 .containTop{
     padding-top: 100px;
+
 }
+.contact-us{
+    max-width: 100%;
+    height: auto;
+    background: linear-gradient(160deg, #D4DFFA 0%, #F7BEBE 100%);
+    padding: 20px;
+    /* background-image:url('../img/cherry.png'); */
+
+}
+
+footer{
+
+    /* background: linear-gradient(160deg, #D4DFFA 0%, #F7BEBE 100%); */
+    
+    padding: 40px;
+}
+
+.hero {
+
+    padding-top: 20px;
+    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
+    /* background-image:url('../img/artboard_1.png'); */
+    /* background-color: #34ADFF; */
+    /* background: linear-gradient(160deg, #D4DFFA 0%, #F7BEBE 100%); */
+    background: -webkit-linear-gradient(110deg,white 70%, #F7BEBE 35%);
+    /* background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
 video{
     position:relative;
     display:block;
@@ -31,7 +86,6 @@ video{
 
 nav{
 
-    padding:30px;
 }
 
 ul {
@@ -47,29 +101,29 @@ ul {
     border-radius: 8px;
 }
 backup{
-/* background: url('/img/orange.jpg') no-repeat center center fixed; */
+background: url('/img/orange.jpg') no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 }
 body{
-    background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
+    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
     background-image:url('../img/artboard.png');
     background-attachment:fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 
 
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
