@@ -1,17 +1,19 @@
 /* UD */
-
-
+.containTop{
+    padding-top: 100px;
+}
 video{
     position:relative;
     display:block;
     width:100%; 
     background-size:cover;
     border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
   }
   .float-right{
     position:absolute;
   }
-  h2{
+  h2{ 
     top:80px;
     right:0;
   }
@@ -24,13 +26,12 @@ video{
     background-size: cover;
     /* padding: 60px; */
     border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
 }
 
-.jumbotron.nobackground{
-    background-size: cover;
-    /* padding: 60px; */
-    border-radius: 10px;
-    background-color: none;
+nav{
+
+    padding:30px;
 }
 
 ul {
@@ -38,7 +39,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
 }
 .center {
     margin: auto;
@@ -69,7 +69,7 @@ li {
 
 li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
