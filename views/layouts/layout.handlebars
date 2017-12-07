@@ -8,12 +8,18 @@
   </head>
   <!-- Include Angular library -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+
   <!-- Include out Angular scripts here -->
   <script src="/scripts/root.js"></script>
   <!-- End -->
   <body>
     <div>
-      <div>
+      <div class="container">
+        <div class="col-md-4">
+        <p>LOGO</p></div>
+        <div class="col-md-8">
         <nav>
           <ul>
             {{#if user}}
@@ -38,7 +44,7 @@
             {{/if}}
           </ul>
         </nav>
-        <h1 class="title">Learn Korean</h1>
+        </div>
       </div>
 
       <div>
@@ -56,7 +62,13 @@
         </div>
       </div>
       <footer>
+          <p></p>
+          
+          
+          <p>Footer Information</p>
+          <div>Icons made by <a href="https://www.flaticon.com/authors/maxim-basinski" title="Maxim Basinski">Maxim Basinski</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
       </footer>
     </div>
   </body>
+
 </html>
