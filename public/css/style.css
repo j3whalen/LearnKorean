@@ -120,6 +120,13 @@ h2{
     
 }
 
+.col-centered{
+
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* flip speed goes here */
 .flipper {
 	transition: 0.3s;

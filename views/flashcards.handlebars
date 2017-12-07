@@ -3,10 +3,11 @@
   at the top of layout.handlebars
 -->
 
-<h1>{{category}}</h1>
+<h1 class="center text-center">{{category}}</h1>
 <div ng-app="myApp" ng-controller="myCtrl">
 <div ng-repeat="card in cards track by $index">
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="center">
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front">
 			<!-- front content -->
@@ -19,9 +20,18 @@
 		</div>
 	</div>
 </div>
-    <br>
+  </div>
+
+<br>
 </div>
 </div>
+
+<div class="center text-center">
+<form action="#" method="get">
+  <input type="button" value="Test">
+</form>
+</div>
+
 
 <script>
   
@@ -29,13 +39,13 @@
 var app = angular.module('myApp', []);
 
 app.controller('myCtrl', function($scope, $http) {
-  $http.get("http://localhost:3000/test.angular")
+  $http.get("http://localhost:3000/flashcards.angular")
   .then(function(response){
     $scope.cards = response.data.cards;
     console.log("Angular Console: ", $scope.cards);
   }, function(error) {
     console.log("ERROR", error);
-  });
+  } );
 });
 
 </script>

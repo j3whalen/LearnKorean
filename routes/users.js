@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/koreanwebsite');
+
+var db = mongoose.connection;
 
 
 var User = require('../models/user');
@@ -45,11 +49,23 @@ router.post('/register', function(req, res){
 		});
 	}
 	else{
-		var newUser = new User({
+		db.collection("words").find({}).toArray (function(err, result) {
+			if(err){
+				throw err;
+			}
+			else{
+				// res.send({
+				// 	cards:result});
+
+				wordsAsString = JSON.stringify(result);
+				var newUser = new User({
 					name: name,
 					email:email,
 					username: username,
-					password: password
+					password: password,
+					desiredcategory: "",
+					listOfCorrectWords: "",
+					listOfIncorrectWords: wordsAsString
 				});
 
 				User.createUser(newUser, function(err, user){
@@ -60,6 +76,10 @@ router.post('/register', function(req, res){
 				req.flash('success_msg', 'You are registered and can now login');
 
 				res.redirect('/users/login');
+
+			}
+		});
+
 	}
 });
 

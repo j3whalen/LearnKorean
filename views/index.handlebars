@@ -1,17 +1,65 @@
 <div class="center">
   <h2 class="page-header">Hello, {{user.name}}! Welcome To your Dashboard!</h2>
   <p>Put Statistics here</p>
+  <div class="stats">Over all percentage: {{overallStat}}%</div>
+  <div class="stats">Greetings percentage: {{greetingstat}}%</div>
+  <div class="stats">Conversation percentage: {{conversationstat}}%</div>
+  <div class="stats">Food percentage: {{foodstat}}%</div>
+  <div class="stats">Sports percentage: {{sportsstat}}%</div>
+  <div class="stats">Colors percentage: {{colorsstat}}%</div>
+  <div class="stats">House Items percentage: {{houseitemsstat}}%</div>
 </div>
-  {{#if errors}}
-    {{#each errors}}
-    <div>
-      <div class="alert alert-danger">
-        {{{msg}}}
-      </div>
-    </div>
-    {{/each}}
-  {{/if}}
+{{#if errors}} {{#each errors}}
+<div>
+  <div class="alert alert-danger">
+    {{{msg}}}
+  </div>
+</div>
+{{/each}} {{/if}}
+
 <form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>Greetings</label>
+    <input type="submit" value="greetings" name="category">
+  </div>
+</form>
+
+<form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>Sports</label>
+    <input type="submit" value="sports" name="category">
+  </div>
+</form>
+
+<form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>Conversation</label>
+    <input type="submit" value="conversation" name="category">
+  </div>
+</form>
+
+<form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>Food</label>
+    <input type="submit" value="food" name="category">
+  </div>
+</form>
+
+<form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>Colors</label>
+    <input type="submit" value="colors" name="category">
+  </div>
+</form>
+
+<form action="/learn" method="post">
+  <div class="learnmethod">
+    <label>House Items</label>
+    <input type="submit" value="houseitems" name="category">
+  </div>
+</form>
+
+<!--
   <h2 class="text-center">Please select a category and a way to study to start learning korean!</h2>
   <h3 class="text-center">Categories</h3>
   <div class="container-fluid text-center">
@@ -46,4 +94,4 @@
     </div>
   </div>
   <input type="submit" value="LEARN!">
-</form>
+  -->

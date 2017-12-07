@@ -20,12 +20,18 @@ var UserSchema = mongoose.Schema({
   name: {
     type: String
   },
-  listOfCorrectWords: [{
+  desiredcategory: {
+    type: String
+  },
+  wordstolearn: {
+    type: String
+  },
+  listOfCorrectWords: {
     type: String,
-}],
-  listOfIncorrectWords: [{
+},
+  listOfIncorrectWords: {
     type: String,
-}]
+}
   //we can compute stats by using the lengths of these arrays
 });
 
