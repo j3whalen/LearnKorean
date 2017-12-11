@@ -64,7 +64,7 @@ router.post('/register', function(req, res){
 					username: username,
 					password: password,
 					desiredcategory: "",
-					listOfCorrectWords: "",
+					listOfCorrectWords: "[]",
 					listOfIncorrectWords: wordsAsString
 				});
 
