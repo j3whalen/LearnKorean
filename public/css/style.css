@@ -6,7 +6,7 @@ img{
 
     max-width: 100%;
     height: auto;
-    box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
+
     text-align: center;
     display: inline-block; vertical-align: middle; float: none;
 }
@@ -20,8 +20,8 @@ img{
     display:inline-block;
 }
 .showcase{
-
-    padding:100px;
+    background-color:#f0f0f0;
+    padding:40px;
 
 }
 
@@ -68,26 +68,54 @@ img{
     /* background-image:url('../img/cherry.png'); */
 
 }
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  width: 300px;
+  height: 300px;
+
+  border-radius: 3px;
+
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 40px;
+    width:100%;
+    color: #63BAB5;
+}
 
 
 footer{
 
-    /* background: linear-gradient(160deg, #D4DFFA 0%, #F7BEBE 100%); */
+    background: linear-gradient(160deg, #B9D8CB 0%, #63BAB5 100%);
     
-    padding: 40px;
 }
-
+ 
 .hero {
 
-    padding-top: 20px;
+    /* padding-top: 20px; */
     /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
-    /* background-image:url('../img/artboard_1.png'); */
+    background-image:url('../img/artboard.png');
     /* background-color: #34ADFF; */
-    background: linear-gradient(160deg, #FCC29A 0%, #29D2E4 50%);
+    /* background: linear-gradient(160deg, #FCC29A 0%, #29D2E4 50%); */
     /* background: -webkit-linear-gradient(110deg,white 70%, #F7BEBE 35%); */
     /* background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
+
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment:scroll;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -111,6 +139,8 @@ text-align: center;
   h2{ 
     top:80px;
     right:0;
+    padding:10px;
+    color:white;
   }
   a{
     top:150px;
@@ -154,7 +184,7 @@ body{
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: cornflowerblue;
+    background-color: white;
 
     font-family: 'Arimo';font-size: 22px;
 }
@@ -213,11 +243,12 @@ h2{
 /*FLIPING A CARD*/
 /* entire container, keeps perspective */
 .flip-container {
-	perspective: 700px;
+    perspective: 700px;
+
 }
 	/* flip the pane when hovered */
 	.flip-container:active .flipper, .flip-container.active .flipper {
-		transform: rotateY(180deg);
+        transform: rotateY(180deg);
 	}
 
 .flip-container, .front, .back {
@@ -225,6 +256,13 @@ h2{
     height: 200px;
     
 }
+
+.register{
+
+    background-image:url('../img/artboard.png');
+    height: 100vh;
+}
+
 
 .col-centered{
 
@@ -244,12 +282,21 @@ h2{
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-    background-color: white;
+    background-color: grey;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
+.dark{
+
+    color: rgb(27, 27, 27);
+}
+
+p{
+font-size: 16px;
+
+}
 /* front pane, placed above back */
 .front {
 	z-index: 2;
