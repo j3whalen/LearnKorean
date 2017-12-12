@@ -1,0 +1,99 @@
+<!--
+  Angular and associated Controller logic are now included as JS scripts
+  at the top of layout.handlebars
+-->
+
+<h1 class="center text-center">Test For {{category}}</h1>
+<div ng-app="TestApp" ng-controller="TestCtrl">
+  <div style="width:100px; margin:0 auto;">
+    <h1 ng-bind="QuestionNumber +1 "></h1>
+    <p ng-bind="question.korean"></p>
+
+      <p>Select an answer:</p>
+
+      <select ng-selected="selected" ng-model="selectedAnswer" ng-options="wordstotest.english for wordstotest in wordstotest">
+      </select>
+
+    <div ng-if="showSubmit">
+      <input type="submit" value="Submit" ng-click="submit()">
+    </div>
+
+
+    <div ng-if="showNext">
+      <div class="center text-center">
+        <form action="/test" method="get">
+          <input type="submit" value="Next">
+        </form>
+      </div>
+    </div>
+
+    <div ng-if="showResults">
+      <div class="center text-center">
+        <form action="/results" method="get">
+          <input type="submit" value="See Results!">
+        </form>
+      </div>
+    </div>
+
+    <div ng-if="isWrong">
+      <h1 style="color:red;">INCORRECT</h1>
+    </div>
+    <div ng-if="isCorrect">
+      <h1 style="color:green;">CORRECT</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Implement Check button here???
+<form action="/test" method="get">
+  <input type="submit" value="Test">
+</form>
+</div>
+-->
+
+<script>
+
+  // Define the Application module
+  var app = angular.module('TestApp', []);
+  app.controller('TestCtrl', function ($scope, $http) {
+    $http.get("http://localhost:3000/test.angular")
+      .then(function (response) {
+        $scope.QuestionNumber = response.data.QuestionNumber;
+        $scope.question = response.data.question;
+        $scope.isCorrect = response.data.isCorrect;
+        $scope.isWrong = response.data.isWrong;
+        $scope.showSubmit = response.data.showSubmit;
+        $scope.showNext = response.data.showNext;
+        $scope.wordstotest = response.data.wordstotest;
+        $scope.showResults = response.data.showResults;
+        $scope.submit = function () {
+          $scope.showNext = true;
+          $scope.showSubmit = false;
+          if ($scope.question.korean == $scope.selectedAnswer.korean) {
+            console.log("correct");
+            $scope.isCorrect = true;
+            $scope.isWrong = false;
+          }
+          else {
+            console.log("incorrect");
+            $scope.isCorrect = false;
+            $scope.isWrong = true;
+          }
+          var data = {
+            question: $scope.question,
+            selectedAnswer: $scope.selectedAnswer
+          }
+          $http.post('/learn/checkanswers', data)
+            .then(function (data) {
+              console.log("Data was successfully sent");
+            })
+        }
+
+      }, function (error) {
+        console.log("ERROR", error);
+      });
+  });
+
+</script>
