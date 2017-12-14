@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var router = express.Router();
 var Word = require('../models/word');
-mongoose.connect('mongodb://localhost/koreanwebsite');
+mongoose.connect('mongodb://admin:admin@ds139446.mlab.com:39446/koreanwebsite');
 
 var db = mongoose.connection;
 var QuestionIndex = 0;

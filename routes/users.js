@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/koreanwebsite');
+mongoose.connect('mongodb://admin:admin@ds139446.mlab.com:39446/koreanwebsite');
 
 var db = mongoose.connection;
 
