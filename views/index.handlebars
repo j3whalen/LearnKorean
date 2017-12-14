@@ -1,67 +1,124 @@
-<div class="center">
-  <h2 class="page-header">Hello, {{user.name}}! Welcome To your Dashboard!</h2>
-  <p>Put Statistics here</p>
-  <div class="stats">Over all percentage: {{overallStat }}%</div>
-  <div class="stats">Greetings percentage: {{greetingstat}}%</div>
-  <div class="stats">Conversation percentage: {{conversationstat}}%</div>
-  <div class="stats">Food percentage: {{foodstat}}%</div>
-  <div class="stats">Sports percentage: {{sportsstat}}%</div>
-  <div class="stats">Colors percentage: {{colorsstat}}%</div>
-  <div class="stats">House Items percentage: {{houseitemsstat}}%</div>
-</div>
+<div class="index-style">
+  <div class="center">
+    <h2 class="page-header">Hello, {{user.name}}! Welcome to your Dashboard!</h2>
+    <div class= "row">
+      <div class="col-md-4">
+        <div class="stats-overall">Total Words Learned: </div>
+      </div>
 
-{{#if worderror}}
-{{worderror}}
-{{/if}}
-{{#if errors}} {{#each errors}}
-<div>
-  <div class="alert alert-danger">
-    {{{msg}}}
-  </div>
-</div>
-{{/each}} {{/if}}
+      <div class="col-md-4">
+        <div class="stats-overall">Overall Percentage: {{overallStat }}%</div>
+      </div>
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>Greetings</label>
-    <input type="submit" value="greetings" name="category">
+      <div class="col-md-4">
+        <div class="stats-overall">Stat Placeholder: </div>
+      </div>
+    </div>
   </div>
-</form>
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>Sports</label>
-    <input type="submit" value="sports" name="category">
+  {{#if worderror}}
+  {{worderror}}
+  {{/if}}
+  {{#if errors}} {{#each errors}}
+  <div>
+    <div class="alert alert-danger">
+      {{{msg}}}
+    </div>
   </div>
-</form>
+  {{/each}} {{/if}}
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>Conversation</label>
-    <input type="submit" value="conversation" name="category">
-  </div>
-</form>
+  {{!-- Contain for Grid --}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+          <div class="button-background">
+            <input type="submit" value="greetings" name="category">
+              <div class="stats">percentage complete: {{greetingstat}}%</div>
+            </div>
+          </div>
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>Food</label>
-    <input type="submit" value="food" name="category">
-  </div>
-</form>
+      </form>
+      </div>
+    <div class="col-md-1"></div>
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>Colors</label>
-    <input type="submit" value="colors" name="category">
-  </div>
-</form>
+    <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+          <div class="button-background">
+            <input type="submit" value="sports" name="category">
+              <div class="stats">percentage complete: {{sportsstat}}%</div>
+          </div>
+          </div>
+      </form>
+    </div>
 
-<form action="/learn" method="post">
-  <div class="learnmethod">
-    <label>House Items</label>
-    <input type="submit" value="houseitems" name="category">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+            <div class="button-background">
+              <input type="submit" value="conversation" name="category">
+                <div class="stats">percentage complete: {{conversationstat}}%</div>
+
+            </div>
+            </div>
+      </form>
+    </div>
+
+      <div class="col-md-1"></div>
+
+    </div> 
+  {{!-- End of Row --}}
+
+
+  <div class="row">
+
+    <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+          <div class="button-background">
+            <input type="submit" value="food" name="category">
+                <div class="stats">percentage complete: {{foodstat}}%</div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+      <div class="col-md-1"></div>
+
+    <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+          <div class="button-background">
+            <input type="submit" value="colors" name="category">
+              <div class="stats">percentage complete: {{colorsstat}}%</div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+      <div class="col-md-1"></div>
+
+    <div class="col-md-3 category-div">
+      <form action="/learn" method="post">
+        <div class="learnmethod">
+          <div class="button-background">
+            <input type="submit" value="houseitems" name="category">
+              <div class="stats">percentage complete: {{houseitemsstat}}%</div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+        <div class="col-md-1"></div>
+    
+    
+    </div>
   </div>
-</form>
+
 
 <!--
   <h2 class="text-center">Please select a category and a way to study to start learning korean!</h2>

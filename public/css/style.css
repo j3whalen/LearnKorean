@@ -2,355 +2,507 @@
 
 
 /* http://www.colourlovers.com/palette/4031931/Rose_Quartz_Serenity */
-img{
+
+img
+{
+    display: inline-block;
+    float: none;
 
     max-width: 100%;
     height: auto;
 
     text-align: center;
-    display: inline-block; vertical-align: middle; float: none;
+    vertical-align: middle;
 }
 
-.row{
-
+.row
+{
     text-align: center;
 }
 
-.col-md-1 {
-    display:inline-block;
-}
-.showcase{
-    background-color:#f0f0f0;
-    padding:40px;
-
+.col-md-1
+{
+    display: inline-block;
 }
 
-
-.jumboapp{
-
-    background-color: #F7BEBE;
-
-}
-
-.start-now{
-
-    background: linear-gradient(170deg, #13829B 30%, #29D2E4 70%);
+.showcase
+{
     padding: 40px;
 
+    background-color: #f0f0f0;
 }
 
+.jumboapp
+{
+    background-color: #f7bebe;
+}
 
-.containTop{
+.start-now
+{
+    padding: 40px;
+
+    background: linear-gradient(170deg, #13829b 30%, #29d2e4 70%);
+}
+
+.containTop
+{
     padding-top: 100px;
-
 }
 
-.containLeftRight{
-
+.containLeftRight
+{
     padding-right: 150px;
     padding-left: 150px;
-
 }
 
-.features{
-
+.features
+{
     padding-bottom: 40px;
 }
-.containBot{
 
+.containBot
+{
     padding-bottom: 20px;
 }
-.contact-us{
+
+.contact-us
+{
     max-width: 100%;
     height: auto;
-    background: linear-gradient(170deg, #29D2E4 20%, #13829B 70%);
     padding: 40px;
-    /* background-image:url('../img/cherry.png'); */
 
+    background: linear-gradient(170deg, #29d2e4 20%, #13829b 70%);
+    /* background-image:url('../img/cherry.png'); */
 }
+
+.category-div
+{
+    margin-bottom: 15px;
+
+    color: white;
+    border-radius: 16px;
+    background-color: #63bab5;
+}
+
+.index-style
+{
+    background-color: #f0f0f0;
+}
+
+input
+{
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    border-radius: 25px;
+    background-color: #b9d8cb;
+}
+
+h4
+{
+    font-size: 28px;
+
+    padding: 15px;
+}
+
+.stats
+{
+    font-size: 14px;
+
+    text-align: center;
+}
+
+.stats-overall{
+    text-align: center;
+    font-size: 24px;
+    margin: 15px;
+}
+
 .center-div
 {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 10%;
-  left: 0;
-  width: 300px;
-  height: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 10%;
+    left: 0;
 
-  border-radius: 3px;
+    width: 300px;
+    height: 300px;
+    margin: auto;
 
+    border-radius: 3px;
 }
 
-.btn-xl {
-    padding: 10px 20px;
+.btn-xl
+{
     font-size: 20px;
+
+    width: 100%;
+    padding: 10px 20px;
+
+    color: #63bab5;
     border-radius: 40px;
-    width:100%;
-    color: #63BAB5;
     background-color: white;
 }
 
-
-footer{
-
-    background: linear-gradient(160deg, #B9D8CB 0%, #63BAB5 100%);
-    
+footer
+{
+    background: linear-gradient(160deg, #b9d8cb 0%, #63bab5 100%);
 }
- 
-.hero {
 
-    /* padding-top: 20px; */
-    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
-    background-image:url('../img/artboard.png');
+.hero
+{
     /* background-color: #34ADFF; */
     /* background: linear-gradient(160deg, #FCC29A 0%, #29D2E4 50%); */
     /* background: -webkit-linear-gradient(110deg,white 70%, #F7BEBE 35%); */
     /* background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
-
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-attachment:scroll;
     margin: 0;
     padding: 0;
+    /* padding-top: 20px; */
+    /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
 
+    background-image: url('../img/artboard.png');
+    background-attachment: scroll;
+    background-size: cover;
 }
 
-video{
-    position:relative;
-    display:block;
-    width:100%; 
-    background-size:cover;
+video
+{
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
     border-radius: 10px;
-    box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
-  }
-  .float-right{
-    position:absolute;
-  }
-  h1{
-
-text-align: center;
-
-  }
-  
-  h2{ 
-    top:80px;
-    right:0;
-    padding:10px;
-    color:white;
-  }
-  a{
-    top:150px;
-    right:50px;
-  }
-
-.jumbotron{
     background-size: cover;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
+}
+
+.float-right
+{
+    position: absolute;
+}
+
+h1
+{
+    text-align: center;
+}
+
+h2
+{
+    top: 80px;
+    right: 0;
+
+    padding: 10px;
+
+    color: white;
+}
+
+a
+{
+    top: 150px;
+    right: 50px;
+}
+
+.jumbotron
+{
     /* padding: 60px; */
     border-radius: 10px;
+    background-size: cover;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
 }
 
-p{
-
+p
+{
     text-align: left;
 }
 
-ul {
-    list-style-type: none;
+ul
+{
+    overflow: hidden;
+
     margin: 0;
     padding: 0;
-    overflow: hidden;
+
+    list-style-type: none;
 }
-.center {
-    margin: auto;
+
+.center
+{
     width: 50%;
+    margin: auto;
     padding: 10px;
+
     border-radius: 8px;
 }
-backup{
-background: url('/img/orange.jpg') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+
+backup
+{
+    background: url('/img/orange.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
-body{
+
+body
+{
+    font-family: 'Arimo';
+    font-size: 22px;
     /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
     background-image:url('../img/artboard.png');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: white;
 
-    font-family: 'Arimo';font-size: 22px;
+    background-color: white;
 }
 
-li {
+li
+{
     float: right;
 }
 
-li a {
+li a
+{
     display: block;
-    color: black;
-    text-align: center;
+
     padding: 14px 16px;
+
+    text-align: center;
     text-decoration: none;
+
+    color: black;
 }
 
-li a:hover {
-    background-color: #111;
+li a:hover
+{
     text-decoration: none;
+
     color: white;
+    background-color: #111;
 }
-.title{
-  text-align: center;
+
+.title
+{
+    text-align: center;
 }
-form {
+
+form
+{
     width: 80%;
     margin: 0 auto;
 }
 
-label, input {
+label,
+input
+{
     /* in order to define widths */
     display: inline-block;
 }
 
-label {
+label
+{
     width: 30%;
     /* positions the label text beside the input */
+
     text-align: right;
 }
 
-label + input {
+label + input
+{
     width: 30%;
     /* large margin-right to force the next element to the new-line
        and margin-left to create a gutter between the label and input */
     margin: 0 30% 0 4%;
 }
 
+
 /* only the submit button is matched by this selector,
    but to be sure you could use an id or class for that button */
-input + input {
+
+input + input
+{
     float: right;
 }
-h2{
-  text-align: center;
+
+h2
+{
+    text-align: center;
 }
+
+.flash-cards{
+
+    background-color:#f0f0f0;
+}
+
 /*FLIPING A CARD*/
+
 /* entire container, keeps perspective */
-.flip-container {
+.flip-container
+{
     perspective: 700px;
-
 }
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.active .flipper {
-        transform: rotateY(180deg);
-	}
 
-.flip-container, .front, .back {
-	width: 300px;
+
+/* flip the pane when hovered */
+
+.flip-container:hover .flipper,
+.flip-container.active .flipper
+{
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back
+{
+    width: 300px;
     height: 200px;
-    
 }
 
-.register{
-
-    background-image:url('../img/artboard.png');
+.register
+{
     height: 100vh;
+
+    background-image: url('../img/artboard.png');
 }
 
-
-.col-centered{
-
+.col-centered
+{
     float: none;
+
     margin-right: auto;
     margin-left: auto;
 }
 
-/* flip speed goes here */
-.flipper {
-	transition: 0.3s;
-	transform-style: preserve-3d;
 
-	position: relative;
+/* flip speed goes here */
+
+.flipper
+{
+    position: relative;
+
+    transition: .3s;
+
+    transform-style: preserve-3d;
 }
+
 
 /* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-    background-color: grey;
-	position: absolute;
-	top: 0;
-	left: 0;
+
+.front,
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #63bab5;
+
+    backface-visibility: hidden;
 }
 
-.dark{
-
+.dark
+{
     color: rgb(27, 27, 27);
 }
 
-p{
-font-size: 16px;
+p
+{
+    font-size: 16px;
+}
 
-}
+
 /* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+
+.front
+{
+    z-index: 2;
+    /* for firefox 31 */
+
+    transform: rotateY(0deg);
 }
+
 
 /* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
+
+.back
+{
+    transform: rotateY(180deg);
 }
 
+
 /*testing test stuff*/
-.answers li { 
-    list-style: upper-alpha; 
-    } 
-    
-    label { 
-    margin-left: 0.5em; 
-    cursor: pointer; 
-    } 
-    
-    #results { 
-    background: #dddada; 
-    color: 000000; 
-    padding: 3px; 
-    text-align: center; 
-    width: 200px; 
-    cursor: pointer; 
-    border: 1px solid gray; 
-    }
-    
-    #results:hover { 
-    background: red; 
-    color: #ffffff; 
-    padding: 3px; 
-    text-align: center; 
-    width: 200px; 
-    cursor: pointer; 
-    border: 1px solid gray; 
-    } 
-    
-    #categorylist { 
-    margin-top: 6px; 
-    display: none; 
-    } 
-    
-    #category1, #category2, #category3, #category4, #category5, #category6, #category7, #category8, #category9, #category10, #category11 { 
-    display: none; 
-    }
-    
-    #closing {
+
+.answers li
+{
+    list-style: upper-alpha;
+}
+
+label
+{
+    margin-left: .5em;
+
+    cursor: pointer;
+}
+
+#results
+{
+    width: 200px;
+    padding: 3px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: 000000;
+    border: 1px solid gray;
+    background: #dddada;
+}
+
+#results:hover
+{
+    width: 200px;
+    padding: 3px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #fff;
+    border: 1px solid gray;
+    background: red;
+}
+
+#categorylist
+{
     display: none;
+
+    margin-top: 6px;
+}
+
+#category1,
+#category2,
+#category3,
+#category4,
+#category5,
+#category6,
+#category7,
+#category8,
+#category9,
+#category10,
+#category11
+{
+    display: none;
+}
+
+#closing
+{
     font-style: italic;
     }
     .page-header{
