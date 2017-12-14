@@ -15,38 +15,23 @@ router.get('/', ensureAuthenticated, function (req, res) {
 	db.collection("users").findOne({
 		username: req.user.username
 	}, function (err, result) {
-		if (result.listOfCorrectWords.length !== 0) {
-			var incorrectwords = JSON.parse(result.listOfIncorrectWords);
-			var correctwords = JSON.parse(result.listOfCorrectWords);
-			var overall = (correctwords.length / (incorrectwords.length + correctwords.length));
-			overall = overall.toFixed(2);
-			res.render('index', {
-				overallStat: overall,
-				greetingstat: (((getWordsByCategory(correctwords,'greetings')).length/((getWordsByCategory(incorrectwords,'greetings')).length + (getWordsByCategory(correctwords, 'greetings')).length))).toFixed(2),
-				conversationstat: (((getWordsByCategory(correctwords,'conversation')).length/((getWordsByCategory(incorrectwords,'conversation')).length + (getWordsByCategory(correctwords, 'conversation')).length))).toFixed(2),
-				foodstat: (((getWordsByCategory(correctwords,'food')).length/((getWordsByCategory(incorrectwords,'food')).length + (getWordsByCategory(correctwords, 'food')).length))).toFixed(2),
-				sportsstat: (((getWordsByCategory(correctwords,'sports')).length/((getWordsByCategory(incorrectwords,'sports')).length + (getWordsByCategory(correctwords, 'sports')).length))).toFixed(2),
-				colorsstat: (((getWordsByCategory(correctwords,'colors')).length/((getWordsByCategory(incorrectwords,'colors')).length + (getWordsByCategory(correctwords, 'colors')).length))).toFixed(2),
-				houseitemsstat: (((getWordsByCategory(correctwords,'houseitems')).length/((getWordsByCategory(incorrectwords,'houseitems')).length + (getWordsByCategory(correctwords, 'houseitems')).length))).toFixed(2),
-				isAdmin: function () {
-					return res.locals.user.username == 'admin';
-				}
-			});
-		} else {
-			res.render('index', {
-				overallStat: 0,
-				greetingstat: 0,
-				conversationstat: 0,
-				foodstat: 0,
-				sportsstat: 0,
-				colorsstat: 0,
-				houseitemsstat: 0,
-				isAdmin: function () {
-					return res.locals.user.username == 'admin';
-				}
-			});
-
-		}
+		var incorrectwords = JSON.parse(result.listOfIncorrectWords);
+		var correctwords = JSON.parse(result.listOfCorrectWords);
+		var overall = (correctwords.length / (incorrectwords.length + correctwords.length));
+		overall = overall.toFixed(2);
+		res.render('index', {
+			overallStat: (overall)*100,
+			greetingstat: (((getWordsByCategory(correctwords, 'greetings')).length / ((getWordsByCategory(incorrectwords, 'greetings')).length + (getWordsByCategory(correctwords, 'greetings')).length)))*100,
+			conversationstat: (((getWordsByCategory(correctwords, 'conversation')).length / ((getWordsByCategory(incorrectwords, 'conversation')).length + (getWordsByCategory(correctwords, 'conversation')).length)))*100,
+			foodstat: (((getWordsByCategory(correctwords, 'food')).length / ((getWordsByCategory(incorrectwords, 'food')).length + (getWordsByCategory(correctwords, 'food')).length)))*100,
+			sportsstat: (((getWordsByCategory(correctwords, 'sports')).length / ((getWordsByCategory(incorrectwords, 'sports')).length + (getWordsByCategory(correctwords, 'sports')).length)))*100,
+			colorsstat: (((getWordsByCategory(correctwords, 'colors')).length / ((getWordsByCategory(incorrectwords, 'colors')).length + (getWordsByCategory(correctwords, 'colors')).length)))*100,
+			houseitemsstat: (((getWordsByCategory(correctwords, 'houseitems')).length / ((getWordsByCategory(incorrectwords, 'houseitems')).length + (getWordsByCategory(correctwords, 'houseitems')).length)))*100,
+			user: req.user,
+			isAdmin: function () {
+				return res.locals.user.username == 'admin';
+			}
+		});
 	});
 
 });
@@ -101,6 +86,7 @@ router.get('/flashcards.angular', function (req, res) {
 });
 
 function updateUsersWordsToLearn(listOfDesiredWords, user) {
+	listOfDesiredWords = JSON.stringify(listOfDesiredWords);
 	db.collection('users').updateOne({
 			username: user
 		}, {
@@ -162,10 +148,29 @@ router.post('/learn', function (req, res) {
 			}
 		})
 		.then(function (result) {
-			res.render('flashcards', {
-				category: category,
-				user: req.user
-			});
+			var words = getWordsByCategory(JSON.parse(req.user.listOfIncorrectWords), category);
+			if (words.length != 0) {
+				res.render('flashcards');
+			} else {
+				var incorrectwords = JSON.parse(req.user.listOfIncorrectWords);
+				var correctwords = JSON.parse(req.user.listOfCorrectWords);
+				var overall = (correctwords.length / (incorrectwords.length + correctwords.length));
+				overall = overall.toFixed(2);
+				res.render('index', {
+					overallStat: (overall)*100,
+					greetingstat: (((getWordsByCategory(correctwords, 'greetings')).length / ((getWordsByCategory(incorrectwords, 'greetings')).length + (getWordsByCategory(correctwords, 'greetings')).length)))*100,
+					conversationstat: (((getWordsByCategory(correctwords, 'conversation')).length / ((getWordsByCategory(incorrectwords, 'conversation')).length + (getWordsByCategory(correctwords, 'conversation')).length)))*100,
+					foodstat: (((getWordsByCategory(correctwords, 'food')).length / ((getWordsByCategory(incorrectwords, 'food')).length + (getWordsByCategory(correctwords, 'food')).length)))*100,
+					sportsstat: (((getWordsByCategory(correctwords, 'sports')).length / ((getWordsByCategory(incorrectwords, 'sports')).length + (getWordsByCategory(correctwords, 'sports')).length)))*100,
+					colorsstat: (((getWordsByCategory(correctwords, 'colors')).length / ((getWordsByCategory(incorrectwords, 'colors')).length + (getWordsByCategory(correctwords, 'colors')).length)))*100,
+					houseitemsstat: (((getWordsByCategory(correctwords, 'houseitems')).length / ((getWordsByCategory(incorrectwords, 'houseitems')).length + (getWordsByCategory(correctwords, 'houseitems')).length)))*100,
+					error:"Sorry there are no words left in ".concat(category),
+					isAdmin: function () {
+						return res.locals.user.username == 'admin';
+					}
+				});
+			}
+
 		});
 });
 
@@ -189,15 +194,19 @@ router.get('/test.angular', function (req, res) {
 			} else {
 				//Grab ALL of the users incorrectwords
 				//console.log(result.wordstolearn);
-				var wordstolearn = result.wordstolearn;
+				var wordstolearn = JSON.parse(result.wordstolearn);
+				var incorrectwords = JSON.parse(result.listOfIncorrectWords);
 				//Shuffle the words
 				wordstolearn = shuffle(wordstolearn);
 				console.log("words to learn length", wordstolearn.length);
+				console.log("Incorrect words length", incorrectwords.length);
 				if (wordstolearn.length == 0) {
+					QuestionIndex = 0;
+					questionsreference = [];
 					res.send({
-						QuestionNumber: "",
+						QuestionNumber: "Finished!",
 						wordstotest: "",
-						question: questionsreference[QuestionIndex],
+						question: "",
 						isCorrect: false,
 						isWrong: false,
 						showSubmit: false,
@@ -231,9 +240,11 @@ function grabfourwords(word, questionsreference) {
 			array.push(questionsreference[i]);
 		}
 	}
+	array = shuffle(array);
 	array = array.slice(0, 3);
 	array.push(word);
 	array = shuffle(array);
+
 	return array;
 }
 
@@ -246,12 +257,12 @@ function AddwordtoCorrectwords(user, word) {
 		} else {
 			var correctwords = JSON.parse(result.listOfCorrectWords);
 			correctwords.push(word);
-			var x = JSON.stringify(correctwords);
+			correctwords = JSON.stringify(correctwords);
 			db.collection("users").updateOne({
 				username: user
 			}, {
 				$set: {
-					listOfCorrectWords: x
+					listOfCorrectWords: correctwords
 				}
 			}, function (err, result2) {
 				if (err) {
@@ -271,8 +282,9 @@ function removeWordFromWordsToLearn(user, word) {
 		if (err) {
 			throw err;
 		} else {
-			var wordstolearn = result.wordstolearn;
+			var wordstolearn = JSON.parse(result.wordstolearn);
 			wordstolearn = deleteObjectFromJSON(wordstolearn, word.english);
+			wordstolearn = JSON.stringify(wordstolearn);
 			db.collection("users").updateOne({
 				username: user
 			}, {
@@ -297,8 +309,10 @@ function removeWordFromIncorrectWords(user, word) {
 		if (err) {
 			throw err;
 		} else {
-			var incorrectwords = result.listOfIncorrectWords;
+			var incorrectwords = JSON.parse(result.listOfIncorrectWords);
 			incorrectwords = deleteObjectFromJSON(incorrectwords, word.english);
+			incorrectwords = JSON.stringify(incorrectwords);
+
 			db.collection("users").updateOne({
 				username: user
 			}, {
@@ -318,8 +332,9 @@ function removeWordFromIncorrectWords(user, word) {
 
 function deleteObjectFromJSON(jsonarray, englishWord) {
 	for (var i = 0; i < jsonarray.length; i++) {
-		if (jsonarray[i].english === englishWord) {
+		if (jsonarray[i].english == englishWord) {
 			jsonarray.splice(i, 1);
+			console.log("deleted object from json array");
 		}
 	}
 	return jsonarray;
@@ -349,7 +364,7 @@ router.post('/learn/checkanswers', function (req, res, next) {
 	}
 });
 
-router.get('/results', ensureAuthenticated, function(req, res){
+router.get('/results', ensureAuthenticated, function (req, res) {
 	res.render('results');
 });
 

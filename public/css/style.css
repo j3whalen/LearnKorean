@@ -89,6 +89,7 @@ img{
     border-radius: 40px;
     width:100%;
     color: #63BAB5;
+    background-color: white;
 }
 
 
@@ -247,7 +248,7 @@ h2{
 
 }
 	/* flip the pane when hovered */
-	.flip-container:active .flipper, .flip-container.active .flipper {
+	.flip-container:hover .flipper, .flip-container.active .flipper {
         transform: rotateY(180deg);
 	}
 
@@ -351,4 +352,7 @@ font-size: 16px;
     #closing {
     display: none;
     font-style: italic;
+    }
+    .page-header{
+        color: black;
     }

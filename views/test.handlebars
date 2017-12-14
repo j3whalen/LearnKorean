@@ -6,13 +6,16 @@
 <h1 class="center text-center">Test For {{category}}</h1>
 <div ng-app="TestApp" ng-controller="TestCtrl">
   <div style="width:100px; margin:0 auto;">
-    <h1 ng-bind="QuestionNumber +1 "></h1>
+    <h1 ng-bind="QuestionNumber "></h1>
     <p ng-bind="question.korean"></p>
 
-      <p>Select an answer:</p>
+    <p>Select an answer:</p>
 
-      <select ng-selected="selected" ng-model="selectedAnswer" ng-options="wordstotest.english for wordstotest in wordstotest">
-      </select>
+    
+    <select ng-selected="selected" ng-model="selectedAnswer" ng-options="wordstotest.english for wordstotest in wordstotest">
+    </select>
+
+
 
     <div ng-if="showSubmit">
       <input type="submit" value="Submit" ng-click="submit()">

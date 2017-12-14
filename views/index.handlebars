@@ -1,7 +1,7 @@
 <div class="center">
   <h2 class="page-header">Hello, {{user.name}}! Welcome To your Dashboard!</h2>
   <p>Put Statistics here</p>
-  <div class="stats">Over all percentage: {{overallStat}}%</div>
+  <div class="stats">Over all percentage: {{overallStat }}%</div>
   <div class="stats">Greetings percentage: {{greetingstat}}%</div>
   <div class="stats">Conversation percentage: {{conversationstat}}%</div>
   <div class="stats">Food percentage: {{foodstat}}%</div>
@@ -9,6 +9,10 @@
   <div class="stats">Colors percentage: {{colorsstat}}%</div>
   <div class="stats">House Items percentage: {{houseitemsstat}}%</div>
 </div>
+
+{{#if worderror}}
+{{worderror}}
+{{/if}}
 {{#if errors}} {{#each errors}}
 <div>
   <div class="alert alert-danger">
