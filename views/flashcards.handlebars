@@ -5,47 +5,47 @@
 <div class="flash-cards">
   <h1 class="center text-center">{{category}}</h1>
   <div ng-app="myApp" ng-controller="myCtrl">
-  <div ng-repeat="card in cards track by $index">
-    <div class="center">
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-      <div class="front">
-        <!-- front content -->
-        <h2 ng-bind="card.english"></h2>
-      </div>
-      <div class="back">
-        <!-- back content -->
-        <h2 ng-bind="card.korean"></h2>
-        <h2 ng-bind="card.transliteration"></h2>
+    <div ng-repeat="card in cards track by $index">
+      <div class="col-md-6">
+        <div class="center">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <!-- front content -->
+                <h2 ng-bind="card.english"></h2>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <h2 ng-bind="card.korean"></h2>
+                <h2 ng-bind="card.transliteration"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-    </div>
-
-  <br>
-  </div>
   </div>
 
   <div class="center text-center">
-  <form action="/test" method="get">
-    <input class="category" type="submit" value="Test">
-  </form>
+    <form action="/test" method="get">
+      <input class="category" type="submit" value="Test">
+    </form>
   </div>
 </div>
 
 <script>
-  
-  // Define the Application module
-var app = angular.module('myApp', []);
 
-app.controller('myCtrl', function($scope, $http) {
-  $http.get("/flashcards.angular")
-  .then(function(response){
-    $scope.cards = response.data.cards;
-    console.log("Angular Console: ", $scope.cards);
-  }, function(error) {
-    console.log("ERROR", error);
-  } );
-});
+  // Define the Application module
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function ($scope, $http) {
+    $http.get("/flashcards.angular")
+      .then(function (response) {
+        $scope.cards = response.data.cards;
+        console.log("Angular Console: ", $scope.cards);
+      }, function (error) {
+        console.log("ERROR", error);
+      });
+  });
 
 </script>
