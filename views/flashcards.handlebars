@@ -2,36 +2,36 @@
   Angular and associated Controller logic are now included as JS scripts
   at the top of layout.handlebars
 -->
+<div class="flash-cards">
+  <h1 class="center text-center">{{category}}</h1>
+  <div ng-app="myApp" ng-controller="myCtrl">
+  <div ng-repeat="card in cards track by $index">
+    <div class="center">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class="front">
+        <!-- front content -->
+        <h2 ng-bind="card.english"></h2>
+      </div>
+      <div class="back">
+        <!-- back content -->
+        <h2 ng-bind="card.korean"></h2>
+        <h2 ng-bind="card.transliteration"></h2>
+      </div>
+    </div>
+  </div>
+    </div>
 
-<h1 class="center text-center">{{category}}</h1>
-<div ng-app="myApp" ng-controller="myCtrl">
-<div ng-repeat="card in cards track by $index">
-  <div class="center">
-    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front">
-			<!-- front content -->
-      <h2 ng-bind="card.english"></h2>
-		</div>
-		<div class="back">
-			<!-- back content -->
-      <h2 ng-bind="card.korean"></h2>
-      <h2 ng-bind="card.transliteration"></h2>
-		</div>
-	</div>
-</div>
+  <br>
+  </div>
   </div>
 
-<br>
+  <div class="center text-center">
+  <form action="/test" method="get">
+    <input type="submit" value="Test">
+  </form>
+  </div>
 </div>
-</div>
-
-<div class="center text-center">
-<form action="/test" method="get">
-  <input type="submit" value="Test">
-</form>
-</div>
-
 
 <script>
   
