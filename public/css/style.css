@@ -2,161 +2,143 @@
 
 
 /* http://www.colourlovers.com/palette/4031931/Rose_Quartz_Serenity */
-img{
 
+img {
     max-width: 100%;
     height: auto;
-
     text-align: center;
-    display: inline-block; vertical-align: middle; float: none;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
-.row{
-
+.row {
     text-align: center;
 }
 
 .col-md-1 {
-    display:inline-block;
-}
-.showcase{
-    background-color:#f0f0f0;
-    padding:40px;
-
+    display: inline-block;
 }
 
+.showcase {
+    background-color: #f0f0f0;
+    padding: 40px;
+}
 
-.jumboapp{
-
+.jumboapp {
     background-color: #F7BEBE;
-
 }
 
-.start-now{
-
+.start-now {
     background: linear-gradient(170deg, #13829B 30%, #29D2E4 70%);
     padding: 40px;
-
 }
 
-
-.containTop{
+.containTop {
     padding-top: 100px;
-
 }
 
-.containLeftRight{
-
+.containLeftRight {
     padding-right: 150px;
     padding-left: 150px;
-
 }
 
-.features{
-
+.features {
     padding-bottom: 40px;
 }
-.containBot{
 
+.containBot {
     padding-bottom: 20px;
 }
-.contact-us{
+
+.contact-us {
     max-width: 100%;
     height: auto;
     background: linear-gradient(170deg, #29D2E4 20%, #13829B 70%);
     padding: 40px;
     /* background-image:url('../img/cherry.png'); */
-
 }
-.center-div
-{
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 10%;
-  left: 0;
-  width: 300px;
-  height: 300px;
 
-  border-radius: 3px;
-
+.center-div {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 10%;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
 }
 
 .btn-xl {
     padding: 10px 20px;
     font-size: 20px;
     border-radius: 40px;
-    width:100%;
+    width: 100%;
     color: #63BAB5;
     background-color: white;
 }
 
-
-footer{
-
+footer {
     background: linear-gradient(160deg, #B9D8CB 0%, #63BAB5 100%);
-    
 }
- 
-.hero {
 
+.hero {
     /* padding-top: 20px; */
     /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%); */
-    background-image:url('../img/artboard.png');
+    background-image: url('../img/artboard.png');
     /* background-color: #34ADFF; */
     /* background: linear-gradient(160deg, #FCC29A 0%, #29D2E4 50%); */
     /* background: -webkit-linear-gradient(110deg,white 70%, #F7BEBE 35%); */
     /* background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
-
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-attachment:scroll;
+    background-attachment: scroll;
     margin: 0;
     padding: 0;
-
 }
 
-video{
-    position:relative;
-    display:block;
-    width:100%; 
-    background-size:cover;
+video {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-size: cover;
     border-radius: 10px;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
-  }
-  .float-right{
-    position:absolute;
-  }
-  h1{
+}
 
-text-align: center;
+.float-right {
+    position: absolute;
+}
 
-  }
-  
-  h2{ 
-    top:80px;
-    right:0;
-    padding:10px;
-    color:white;
-  }
-  a{
-    top:150px;
-    right:50px;
-  }
+h1 {
+    text-align: center;
+}
 
-.jumbotron{
+h2 {
+    top: 80px;
+    right: 0;
+    padding: 10px;
+    color: white;
+}
+
+a {
+    top: 150px;
+    right: 50px;
+}
+
+.jumbotron {
     background-size: cover;
     /* padding: 60px; */
     border-radius: 10px;
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
 }
 
-p{
-
+p {
     text-align: left;
 }
 
@@ -166,28 +148,31 @@ ul {
     padding: 0;
     overflow: hidden;
 }
+
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
     border-radius: 8px;
 }
-backup{
-background: url('/img/orange.jpg') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+
+backup {
+    background: url('/img/orange.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-body{
+
+body {
     /* background: linear-gradient(160deg, #02CCBA 0%, #AA7ECD 100%);
     background-image:url('../img/artboard.png');
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover; */
     background-color: white;
-
-    font-family: 'Arimo';font-size: 22px;
+    font-family: 'Arimo';
+    font-size: 22px;
 }
 
 li {
@@ -207,15 +192,18 @@ li a:hover {
     text-decoration: none;
     color: white;
 }
-.title{
-  text-align: center;
+
+.title {
+    text-align: center;
 }
+
 form {
     width: 80%;
     margin: 0 auto;
 }
 
-label, input {
+label,
+input {
     /* in order to define widths */
     display: inline-block;
 }
@@ -226,133 +214,200 @@ label {
     text-align: right;
 }
 
-label + input {
+label+input {
     width: 30%;
     /* large margin-right to force the next element to the new-line
        and margin-left to create a gutter between the label and input */
     margin: 0 30% 0 4%;
 }
 
+
 /* only the submit button is matched by this selector,
    but to be sure you could use an id or class for that button */
-input + input {
+
+input+input {
     float: right;
 }
-h2{
-  text-align: center;
+
+h2 {
+    text-align: center;
 }
+
+
 /*FLIPING A CARD*/
+
+
 /* entire container, keeps perspective */
+
 .flip-container {
     perspective: 700px;
-
 }
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.active .flipper {
-        transform: rotateY(180deg);
-	}
 
-.flip-container, .front, .back {
-	width: 300px;
+
+/* flip the pane when hovered */
+
+.flip-container:hover .flipper,
+.flip-container.active .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+    width: 300px;
     height: 200px;
-    
 }
 
-.register{
-
-    background-image:url('../img/artboard.png');
+.register {
+    background-image: url('../img/artboard.png');
     height: 100vh;
 }
 
-
-.col-centered{
-
+.col-centered {
     float: none;
     margin-right: auto;
     margin-left: auto;
 }
 
-/* flip speed goes here */
-.flipper {
-	transition: 0.3s;
-	transform-style: preserve-3d;
 
-	position: relative;
+/* flip speed goes here */
+
+.flipper {
+    transition: 0.3s;
+    transform-style: preserve-3d;
+    position: relative;
 }
+
 
 /* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
+
+.front,
+.back {
+    backface-visibility: hidden;
     background-color: grey;
-	position: absolute;
-	top: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.dark{
-
+.dark {
     color: rgb(27, 27, 27);
 }
 
-p{
-font-size: 16px;
+p {
+    font-size: 16px;
+}
 
-}
+
 /* front pane, placed above back */
+
 .front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
 }
+
 
 /* back, initially hidden pane */
+
 .back {
-	transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
+
 /*testing test stuff*/
-.answers li { 
-    list-style: upper-alpha; 
-    } 
-    
-    label { 
-    margin-left: 0.5em; 
-    cursor: pointer; 
-    } 
-    
-    #results { 
-    background: #dddada; 
-    color: 000000; 
-    padding: 3px; 
-    text-align: center; 
-    width: 200px; 
-    cursor: pointer; 
-    border: 1px solid gray; 
-    }
-    
-    #results:hover { 
-    background: red; 
-    color: #ffffff; 
-    padding: 3px; 
-    text-align: center; 
-    width: 200px; 
-    cursor: pointer; 
-    border: 1px solid gray; 
-    } 
-    
-    #categorylist { 
-    margin-top: 6px; 
-    display: none; 
-    } 
-    
-    #category1, #category2, #category3, #category4, #category5, #category6, #category7, #category8, #category9, #category10, #category11 { 
-    display: none; 
-    }
-    
-    #closing {
+
+.answers li {
+    list-style: upper-alpha;
+}
+
+label {
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+#results {
+    background: #dddada;
+    color: 000000;
+    padding: 3px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+#results:hover {
+    background: red;
+    color: #ffffff;
+    padding: 3px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+#categorylist {
+    margin-top: 6px;
+    display: none;
+}
+
+#category1,
+#category2,
+#category3,
+#category4,
+#category5,
+#category6,
+#category7,
+#category8,
+#category9,
+#category10,
+#category11 {
+    display: none;
+}
+
+#closing {
     display: none;
     font-style: italic;
-    }
-    .page-header{
-        color: black;
-    }
+}
+
+.page-header {
+    color: black;
+}
+
+.answer {
+    background: #b034d9;
+    background-image: -webkit-linear-gradient(top, #b034d9, #2980b9);
+    background-image: -moz-linear-gradient(top, #b034d9, #2980b9);
+    background-image: -ms-linear-gradient(top, #b034d9, #2980b9);
+    background-image: -o-linear-gradient(top, #b034d9, #2980b9);
+    background-image: linear-gradient(to bottom, #b034d9, #2980b9);
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+    border-radius: 7px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 40 px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    height: 60px;
+    width: 300px;
+}
+
+.answer:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+.centeranswer {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.question{
+    margin-bottom: 30px;
+}
