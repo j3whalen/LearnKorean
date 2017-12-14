@@ -87,6 +87,7 @@ img
 .index-style
 {
     background-color: #f0f0f0;
+    padding-bottom: 20%;
 }
 
 .category
@@ -149,6 +150,7 @@ h4
 footer
 {
     background: linear-gradient(160deg, #b9d8cb 0%, #63bab5 100%);
+    
 }
 
 .hero
@@ -336,6 +338,13 @@ h2
 {
     text-align: center;
 }
+
+.test-style{
+    background-color:#f0f0f0;
+    /* Quick fix. Def needs to be revisited. */
+    height: 91vh;
+}
+
 
 .flash-cards{
 
