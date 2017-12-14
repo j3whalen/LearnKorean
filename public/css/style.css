@@ -89,7 +89,7 @@ img
     background-color: #f0f0f0;
 }
 
-input
+.category
 {
     width: 100%;
     margin-top: 10%;
@@ -510,11 +510,11 @@ label
     }
     .answer {
         background: #b034d9;
-        background-image: -webkit-linear-gradient(top, #b034d9, #2980b9);
-        background-image: -moz-linear-gradient(top, #b034d9, #2980b9);
-        background-image: -ms-linear-gradient(top, #b034d9, #2980b9);
-        background-image: -o-linear-gradient(top, #b034d9, #2980b9);
-        background-image: linear-gradient(to bottom, #b034d9, #2980b9);
+        background-image: -webkit-linear-gradient(top,#63bab5, #63bab5);
+        background-image: -moz-linear-gradient(top, #63bab5, #63bab5);
+        background-image: -ms-linear-gradient(top, #63bab5, #63bab5);
+        background-image: -o-linear-gradient(top, #63bab5, #63bab5);
+        background-image: linear-gradient(to bottom, #63bab5, #63bab5);
         -webkit-border-radius: 7;
         -moz-border-radius: 7;
         border-radius: 7px;
