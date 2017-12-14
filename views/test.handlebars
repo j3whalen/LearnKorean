@@ -61,7 +61,7 @@
   // Define the Application module
   var app = angular.module('TestApp', []);
   app.controller('TestCtrl', function ($scope, $http) {
-    $http.get("https://localhost:3000/test.angular")
+    $http.get("/test.angular")
       .then(function (response) {
         $scope.QuestionNumber = response.data.QuestionNumber;
         $scope.question = response.data.question;
