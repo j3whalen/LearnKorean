@@ -3,47 +3,39 @@
   at the top of layout.handlebars
 -->
 
-<h1 class="center text-center">Test For {{category}}</h1>
+<h1 class="text-center">Test For {{category}}</h1>
 <div ng-app="TestApp" ng-controller="TestCtrl">
-  <div style="width:100px; margin:0 auto;">
-    <h1 ng-bind="QuestionNumber "></h1>
-    <p ng-bind="question.korean"></p>
+  <br>
+  <h1 class="question" ng-bind="question.korean"></h1>
 
-    <p>Select an answer:</p>
-
-    
-    <select ng-selected="selected" ng-model="selectedAnswer" ng-options="wordstotest.english for wordstotest in wordstotest">
-    </select>
-
-
-
-    <div ng-if="showSubmit">
-      <input type="submit" value="Submit" ng-click="submit()">
+  <div ng-if="showSubmit">
+    <div class="centeranswer text-center" ng-repeat="word in wordstotest">
+      <input class="answer " type="submit" ng-value="word.english" ng-bind="word" ng-click="submit(word)">
     </div>
+  </div>
 
 
-    <div ng-if="showNext">
-      <div class="center text-center">
-        <form action="/test" method="get">
-          <input type="submit" value="Next">
-        </form>
-      </div>
+  <div ng-if="showNext">
+    <div class="center text-center">
+      <form action="/test" method="get">
+        <input type="submit" value="Next">
+      </form>
     </div>
+  </div>
 
-    <div ng-if="showResults">
-      <div class="center text-center">
-        <form action="/results" method="get">
-          <input type="submit" value="See Results!">
-        </form>
-      </div>
+  <div ng-if="showResults">
+    <div class="center text-center">
+      <form action="/results" method="get">
+        <input type="submit" value="See Results!">
+      </form>
     </div>
+  </div>
 
-    <div ng-if="isWrong">
-      <h1 style="color:red;">INCORRECT</h1>
-    </div>
-    <div ng-if="isCorrect">
-      <h1 style="color:green;">CORRECT</h1>
-    </div>
+  <div ng-if="isWrong">
+    <h1 style="color:red;">INCORRECT</h1>
+  </div>
+  <div ng-if="isCorrect">
+    <h1 style="color:green;">CORRECT</h1>
   </div>
 </div>
 
@@ -71,9 +63,11 @@
         $scope.showNext = response.data.showNext;
         $scope.wordstotest = response.data.wordstotest;
         $scope.showResults = response.data.showResults;
-        $scope.submit = function () {
+        $scope.submit = function (word) {
           $scope.showNext = true;
           $scope.showSubmit = false;
+          $scope.selectedAnswer = word;
+          console.log($scope.selectedAnswer);
           if ($scope.question.korean == $scope.selectedAnswer.korean) {
             console.log("correct");
             $scope.isCorrect = true;

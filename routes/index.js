@@ -217,7 +217,7 @@ router.get('/test.angular', function (req, res) {
 					var words = grabfourwords(questionsreference[QuestionIndex], questionsreference);
 
 					res.send({
-						QuestionNumber: QuestionIndex,
+						QuestionNumber: QuestionIndex +1,
 						wordstotest: words,
 						question: questionsreference[QuestionIndex], //need to modify how to increment index
 						isCorrect: false,
@@ -268,7 +268,7 @@ function AddwordtoCorrectwords(user, word) {
 				if (err) {
 					throw err;
 				} else {
-					console.log("correct words length", correctwords.length);
+					console.log("correct words length", JSON.parse(correctwords.length));
 				}
 			});
 		}
