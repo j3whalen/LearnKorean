@@ -20,6 +20,18 @@ img
     text-align: center;
 }
 
+
+
+h5{
+
+    font-family: 'Sofia';
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
 .col-md-1
 {
     display: inline-block;
@@ -135,6 +147,24 @@ h4
     border-radius: 3px;
 }
 
+.center-div-register
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 10%;
+    left: 0;
+
+    width: 400px;
+    height: 400px;
+    margin: auto;
+
+    border-radius: 3px;
+}
+
+
+
+
 .btn-xl
 {
     font-size: 20px;
@@ -237,7 +267,7 @@ ul
 
 
 li{
-font-size: 10px;
+font-size: 12px;
 
 }
 .center
@@ -291,9 +321,9 @@ li a
 li a:hover
 {
     text-decoration: none;
-
     color: white;
-    background-color: #111;
+    background-color: #63bab5;
+    border-radius: 5px;
 }
 
 .title
