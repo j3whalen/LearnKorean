@@ -17,9 +17,14 @@
   <body>
     <div>
       <div class="container">
-        <div class="col-md-4">
+        <div class="col-md-2">
         <p>LOGO</p></div>
-        <div class="col-md-8">
+        <div class="col-md-10">
+        
+        {{!-- NAV BAR NEEDS TO BE REVISITED. --}}
+        
+        
+        
         <nav>
           <ul>
             {{#if user}}
@@ -30,9 +35,33 @@
               <a href="/users/logout">Logout</a>
             </li>
             {{else}}
+            <form action="/users/login" method="post">
+              <li>
+                <div>
+                  <a><button type="submit">Submit</button></a>
+                </div>
+              </li>
             <li>
-              <a href="/users/login">Login{{user}}</a>
+              <div>
+                <a><input type="password" name="password" placeholder="Password"></a>
+              </div>
             </li>
+            <li>
+              <div>
+                <a>Password</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a><input type="text" name="username" placeholder="Username"></a>
+              </div>
+            </li>
+              <li>
+                <div>
+                  <a>Username</a>
+                </div>
+              </li>
+          </form>
             <li>
               <a href="/users/register">Register</a>
             </li>
@@ -46,7 +75,6 @@
         </nav>
         </div>
       </div>
-
       <div>
         <div>
           {{#if success_msg}}
