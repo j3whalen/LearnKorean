@@ -30,7 +30,14 @@ h5{
     font-style: italic;
 }
 
+.logo{
 
+    font-family: 'Sofia';
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+}
 
 .col-md-1
 {
@@ -311,7 +318,7 @@ body
 
 li
 {
-    float: right;
+    float: left;
 }
 
 li a

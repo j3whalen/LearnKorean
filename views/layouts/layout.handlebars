@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <title>Learn Korean</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <!-- Include Angular library -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
@@ -21,13 +24,80 @@
   <body>
     <div>
       <div class="container">
-        <div class="col-md-4">
-        <h5>Korean Cards</h5></div>
-        <div class="col-md-8">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
         
         {{!-- NAV BAR NEEDS TO BE REVISITED. --}}
       
-        <nav>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          {{!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> --}}
+          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand logo" href="#">Korean Cards</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              
+              
+              
+              {{#if user}}  
+              <li class="nav-item">
+                <div>
+                  <a class="active" href="/">Dashboard</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a href="/users/logout">Logout</a>
+                </div>
+              </li>
+              {{else}}
+              <form action="/users/login" method="post">
+              <li class="nav-item">
+                <a href="/users/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a>Username</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a><input type="text" name="username" placeholder="Username"></a>
+              </div>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a>Password</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a><input type="password" name="password" placeholder="Password"></a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <a><button type="submit">Submit</button></a>
+                </div>
+              </li>
+              </form>
+              {{/if}}
+              {{#if isAdmin}}
+              <li>
+                <a href="/users/admin">Add A Word</a>
+              </li>
+              {{/if}}
+
+            </ul>
+          </div>
+        </nav>
+
+
+
+
+
+
+        {{!-- <nav>
           <ul>
             {{#if user}}
             <li>
@@ -74,7 +144,7 @@
             </li>
             {{/if}}
           </ul>
-        </nav>
+        </nav> --}}
         </div>
       </div>
       <div>
