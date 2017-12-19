@@ -3,49 +3,42 @@
   at the top of layout.handlebars
 -->
 <div class="test-style">
-<h1 class="text-center">Test For {{category}}</h1>
-<div ng-app="TestApp" ng-controller="TestCtrl">
-  <br>
-  <h1 class="question" ng-bind="question.korean"></h1>
+  <h1 class="text-center">Test For {{category}}</h1>
+  <div ng-app="TestApp" ng-controller="TestCtrl">
+    <br>
+    <h1 class="question" ng-bind="question.korean"></h1>
 
-  <div ng-if="showSubmit">
-    <div class="centeranswer text-center" ng-repeat="word in wordstotest">
-      <input class="answer " type="submit" ng-value="word.english" ng-bind="word" ng-click="submit(word)">
+    <div ng-if="showSubmit">
+      <div class="centeranswer text-center" ng-repeat="word in wordstotest">
+        <input class="answer " type="submit" ng-value="word.english" ng-bind="word" ng-click="submit(word)">
+      </div>
+    </div>
+
+
+    <div ng-if="showNext">
+      <div class="center text-center">
+        <form action="/test" method="get">
+          <input class="answer" type="submit" value="Next">
+        </form>
+      </div>
+    </div>
+
+    <div ng-if="showResults" >
+      <div class="center text-center">
+        <form action="/results" method="get">
+          <input class="answer" type="submit" value="See Results!">
+        </form>
+      </div>
+    </div>
+
+    <div ng-if="isWrong" class="text-center">
+      <i class="material-icons" style="font-size:48px;color:red">highlight_off</i>
+    </div>
+    <div ng-if="isCorrect" class="text-center">
+      <i class="material-icons" style="font-size:48px;color:green">check_circle</i>
     </div>
   </div>
-
-
-  <div ng-if="showNext">
-    <div class="center text-center">
-      <form action="/test" method="get">
-        <input class="answer" type="submit" value="Next">
-      </form>
-    </div>
-  </div>
-
-  <div ng-if="showResults">
-    <div class="center text-center">
-      <form action="/results" method="get">
-        <input class="answer" type="submit" value="See Results!">
-      </form>
-    </div>
-  </div>
-
-  <div ng-if="isWrong">
-    <h1 style="color:red;">INCORRECT</h1>
-  </div>
-  <div ng-if="isCorrect">
-    <h1 style="color:green;">CORRECT</h1>
-  </div>
 </div>
-</div>
-
-<!--Implement Check button here???
-<form action="/test" method="get">
-  <input type="submit" value="Test">
-</form>
-</div>
--->
 
 <script>
 

@@ -9,6 +9,7 @@ var db = mongoose.connection;
 var QuestionIndex = 0;
 var questionsreference = [];
 var amountofwords = 10;
+var resultsFromTest = [];
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function (req, res) {
@@ -268,7 +269,7 @@ function AddwordtoCorrectwords(user, word) {
 				if (err) {
 					throw err;
 				} else {
-					console.log("correct words length", JSON.parse(correctwords.length));
+					console.log("correct words length", (JSON.parse(correctwords)).length);
 				}
 			});
 		}
@@ -339,13 +340,26 @@ function deleteObjectFromJSON(jsonarray, englishWord) {
 	}
 	return jsonarray;
 }
+router.get('/results.angular', function(req, res){
+	var x = resultsFromTest;
+	resultsFromTest=[];
+	res.send({
+		results: x
+	});
+});
 router.post('/learn/checkanswers', function (req, res, next) {
+	var word = {};
 	QuestionIndex = QuestionIndex + 1;
 	if (req.body.question.korean == req.body.selectedAnswer.korean) {
 		AddwordtoCorrectwords(req.user.username, req.body.question);
 		removeWordFromWordsToLearn(req.user.username, req.body.question);
 		removeWordFromIncorrectWords(req.user.username, req.body.question);
 		console.log("CORRECT");
+		word.question = req.body.question;
+		word.selected = req.body.selectedAnswer;
+		word.correct = true;
+		resultsFromTest.push(word);
+		console.log("results of test", resultsFromTest);
 		res.send({
 			isCorrect: true,
 			isWrong: false,
@@ -355,6 +369,10 @@ router.post('/learn/checkanswers', function (req, res, next) {
 	} else {
 		removeWordFromWordsToLearn(req.user.username, req.body.question); //getting error saying english is not defined but theres one document left
 		console.log("WRONG");
+		word.question = req.body.question;
+		word.selected = req.body.selectedAnswer;
+		word.correct = false;
+		resultsFromTest.push(word);
 		res.send({
 			isCorrect: false,
 			isWrong: true,

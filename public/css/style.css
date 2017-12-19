@@ -235,6 +235,14 @@ h2
 
     color: white;
 }
+.incorrectresults
+{
+    top: 80px;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
 
 a
 {
@@ -406,7 +414,9 @@ h2
 
 .flip-container,
 .front,
-.back
+.back,
+.backwrong,
+.frontwrong
 {
     width: 300px;
     height: 200px;
@@ -467,7 +477,8 @@ p
 
 /* front pane, placed above back */
 
-.front
+.front,
+.frontwrong
 {
     z-index: 2;
     /* for firefox 31 */
@@ -478,7 +489,8 @@ p
 
 /* back, initially hidden pane */
 
-.back
+.back,
+.backwrong
 {
     transform: rotateY(180deg);
 }
@@ -589,3 +601,31 @@ label
     .question{
         margin-bottom: 30px;
     }
+    .wrongresult{
+        width: 300px;
+        height: 200px;
+        background-color: red;
+        color: black;
+    }
+
+    .correctresult{
+        width: 300px;
+        height: 200px;
+        background-color: lightgreen;
+        color: black;
+    }
+    .frontwrong,
+    .backwrong
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        background-color: red;
+    
+        backface-visibility: hidden;
+    }
+    .backwrong
+{
+    background-color: green;
+}    

@@ -1,3 +1,66 @@
-<form action="/" method="get">
-    <input type="submit" value="Dashboard">
-</form>
+<div ng-app="resultsApp" ng-controller="resultsCtrl">
+    <div ng-repeat="result in results track by $index">
+{{!-- 
+        <div ng-if="result.correct">
+            <div class="correctresult">
+                <i class="material-icons" style="font-size:48px;color:green">check_circle</i>
+            </div>
+        </div> --}}
+        <div ng-if="!result.correct">
+
+            {{!--
+            <div class="wrongresult">
+                <p>Question: </p>
+                <p ng-bind="result.question.korean"></p>
+                <p>Your Answer: </p>
+                <p ng-bind="result.selected.english"></p>
+                <p>Correct Solution: </p>
+                <p ng-bind="result.question.english"></p>
+            </div> --}}
+
+            <div class="col-md-6">
+                <div class="center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="frontwrong">
+                                <!-- front content -->
+                                <p class="incorrectresults" >Question: </p>
+                                <p class="incorrectresults" ng-bind="result.question.korean"></p>
+                                <p class="incorrectresults">Your Answer: </p>
+                                <p class="incorrectresults" ng-bind="result.selected.english"></p>
+                            </div>
+                            <div class="backwrong">
+                                <!-- back content -->
+                                <p class="incorrectresults" >Correct Solution: </p>
+                                <p class="incorrectresults" ng-bind="result.question.english"></p>
+                                <i class="material-icons" style="font-size:48px;color:green">check_circle</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end wrong result div -->
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    // Define the Application module
+    var app = angular.module('resultsApp', []);
+
+    app.controller('resultsCtrl', function ($scope, $http) {
+        $http.get("/results.angular")
+            .then(function (response) {
+                $scope.results = response.data.results;
+                console.log("Angular Console: ", $scope.results);
+            }, function (error) {
+                console.log("ERROR", error);
+            });
+    });
+
+</script>
