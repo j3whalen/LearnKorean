@@ -189,6 +189,28 @@ h6{
     background-color: white;
 }
 
+
+.btn-md{
+    font-size: 20px;
+    width: 25%;
+    padding: 10px 20px;
+    color: #63bab5;
+    border-radius: 40px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.btn-md-inverse{
+    font-size: 20px;
+    width: 25%;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 40px;
+    background-color: #63bab5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 footer
 {
     background: linear-gradient(160deg, #b9d8cb 0%, #63bab5 100%);
@@ -256,10 +278,21 @@ h2
     font-size: 30px;
 }
 
+a:hover{
+
+    text-decoration: none;
+
+}
+
+
 a
 {
-    /* top: 150px;
-    right: 50px; */
+    color: #63bab5;
+}
+
+.a-inverse{
+
+    color: white;
 }
 
 .jumbotron
@@ -341,9 +374,7 @@ li a
 li a:hover
 {
     text-decoration: none;
-    color: white;
-    background-color: #63bab5;
-    border-radius: 5px;
+
 }
 
 .title
@@ -437,8 +468,14 @@ h2
 .register
 {
     height: 100vh;
-
     background-image: url('../img/artboard.png');
+
+}
+
+.register-form{
+
+    padding-top: 15%;
+
 }
 
 .col-centered
